@@ -5,14 +5,15 @@ function TaskGivers:GiveTask(Object, DeletionFunction, Lifetime)
   local TableToInsert = {
     _obj = Object,
     _de = DeletionFunction or nil,
-    _flexInfo = {_connections = {}, _thread = nil}
+    _flexInfo = {_connection = nil}
   }
   
   if Lifetime then
       TableToInsert.life = {_secondsToLive = Lifetime, _startTime = math.round(tick())}
   end
-  
+	
 	table.insert(Tasks, TableToInsert)
+  
 	return #self._tasks+1
 end
 
