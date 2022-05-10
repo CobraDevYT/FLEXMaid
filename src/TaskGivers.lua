@@ -9,7 +9,7 @@ function TaskGivers:GiveTask(Object, DeletionFunction, Lifetime)
   }
   
   if Lifetime then
-      TableToInsert.life = {_secondsToLive = Lifetime, _startTime = math.round(tich())}
+      TableToInsert.life = {_secondsToLive = Lifetime, _startTime = math.round(tick())}
   end
   
 	table.insert(Tasks, TableToInsert)
